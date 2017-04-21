@@ -1484,3 +1484,49 @@ Caused by: java.lang.Error: Unresolved compilation problems:
 [standard] 2017-04-21 18:07:58 INFO  com.dao.impl.OperateLogDaoImpl [btpool0-0]>>> OperateLogDaoImpl测试
 [standard] 2017-04-21 18:07:58 INFO  com.dao.impl.OperateLogDaoImpl [btpool0-0]>>> 保存
 [standard] 2017-04-21 18:07:58 INFO  com.dao.impl.OperateLogDaoImpl [btpool0-0]>>> OperateLogTest [id=1, jobName=1, jobGroup=2, status=1, operateDate=2, operateTime=1, fileName=2, filePath=1, totalCount=2, realCount=1, remark=2]
+[standard] 2017-04-21 18:51:32 INFO  com.controller.ServiceController [btpool0-0]>>> serviceName:userService,funcName:test
+[standard] 2017-04-21 18:51:32 INFO  com.controller.ServiceController [btpool0-0]>>> 所有beanNames个数：38
+[standard] 2017-04-21 18:51:32 INFO  com.controller.ServiceController [btpool0-0]>>> serviceController
+[standard] 2017-04-21 18:51:32 INFO  com.controller.ServiceController [btpool0-0]>>> operateLogDao
+[standard] 2017-04-21 18:51:32 INFO  com.controller.ServiceController [btpool0-0]>>> frameworkJsonService
+[standard] 2017-04-21 18:51:32 INFO  com.controller.ServiceController [btpool0-0]>>> operateService
+[standard] 2017-04-21 18:51:32 INFO  com.controller.ServiceController [btpool0-0]>>> userService
+[standard] 2017-04-21 18:51:32 INFO  com.controller.ServiceController [btpool0-0]>>> org.springframework.context.annotation.internalConfigurationAnnotationProcessor
+[standard] 2017-04-21 18:51:32 INFO  com.controller.ServiceController [btpool0-0]>>> org.springframework.context.annotation.internalAutowiredAnnotationProcessor
+[standard] 2017-04-21 18:51:32 INFO  com.controller.ServiceController [btpool0-0]>>> org.springframework.context.annotation.internalRequiredAnnotationProcessor
+[standard] 2017-04-21 18:51:32 INFO  com.controller.ServiceController [btpool0-0]>>> org.springframework.context.annotation.internalCommonAnnotationProcessor
+[standard] 2017-04-21 18:51:32 INFO  com.controller.ServiceController [btpool0-0]>>> org.springframework.context.annotation.internalPersistenceAnnotationProcessor
+[standard] 2017-04-21 18:51:32 INFO  com.controller.ServiceController [btpool0-0]>>> org.springframework.context.event.internalEventListenerProcessor
+[standard] 2017-04-21 18:51:32 INFO  com.controller.ServiceController [btpool0-0]>>> org.springframework.context.event.internalEventListenerFactory
+[standard] 2017-04-21 18:51:32 INFO  com.controller.ServiceController [btpool0-0]>>> entityManagerFactory
+[standard] 2017-04-21 18:51:32 INFO  com.controller.ServiceController [btpool0-0]>>> transactionManager
+[standard] 2017-04-21 18:51:32 INFO  com.controller.ServiceController [btpool0-0]>>> org.springframework.aop.config.internalAutoProxyCreator
+[standard] 2017-04-21 18:51:32 INFO  com.controller.ServiceController [btpool0-0]>>> org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0
+[standard] 2017-04-21 18:51:32 INFO  com.controller.ServiceController [btpool0-0]>>> org.springframework.transaction.interceptor.TransactionInterceptor#0
+[standard] 2017-04-21 18:51:32 INFO  com.controller.ServiceController [btpool0-0]>>> org.springframework.transaction.config.internalTransactionAdvisor
+[standard] 2017-04-21 18:51:32 INFO  com.controller.ServiceController [btpool0-0]>>> mvcContentNegotiationManager
+[standard] 2017-04-21 18:51:32 INFO  com.controller.ServiceController [btpool0-0]>>> org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping
+[standard] 2017-04-21 18:51:32 INFO  com.controller.ServiceController [btpool0-0]>>> mvcCorsConfigurations
+[standard] 2017-04-21 18:51:32 INFO  com.controller.ServiceController [btpool0-0]>>> org.springframework.format.support.FormattingConversionServiceFactoryBean#0
+[standard] 2017-04-21 18:51:32 INFO  com.controller.ServiceController [btpool0-0]>>> org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean#0
+[standard] 2017-04-21 18:51:32 INFO  com.controller.ServiceController [btpool0-0]>>> org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter
+[standard] 2017-04-21 18:51:32 INFO  com.controller.ServiceController [btpool0-0]>>> mvcUriComponentsContributor
+[standard] 2017-04-21 18:51:32 INFO  com.controller.ServiceController [btpool0-0]>>> org.springframework.web.servlet.handler.MappedInterceptor#0
+[standard] 2017-04-21 18:51:32 INFO  com.controller.ServiceController [btpool0-0]>>> org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver#0
+[standard] 2017-04-21 18:51:32 INFO  com.controller.ServiceController [btpool0-0]>>> org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver#0
+[standard] 2017-04-21 18:51:32 INFO  com.controller.ServiceController [btpool0-0]>>> org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver#0
+[standard] 2017-04-21 18:51:32 INFO  com.controller.ServiceController [btpool0-0]>>> org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping
+[standard] 2017-04-21 18:51:32 INFO  com.controller.ServiceController [btpool0-0]>>> org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter
+[standard] 2017-04-21 18:51:32 INFO  com.controller.ServiceController [btpool0-0]>>> org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter
+[standard] 2017-04-21 18:51:32 INFO  com.controller.ServiceController [btpool0-0]>>> org.springframework.data.jpa.repository.config.JpaRepositoryConfigExtension#0
+[standard] 2017-04-21 18:51:32 INFO  com.controller.ServiceController [btpool0-0]>>> org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor
+[standard] 2017-04-21 18:51:32 INFO  com.controller.ServiceController [btpool0-0]>>> foo
+[standard] 2017-04-21 18:51:32 INFO  com.controller.ServiceController [btpool0-0]>>> jpaMappingContext
+[standard] 2017-04-21 18:51:32 INFO  com.controller.ServiceController [btpool0-0]>>> operateLogTestRepository
+[standard] 2017-04-21 18:51:32 INFO  com.controller.ServiceController [btpool0-0]>>> org.springframework.orm.jpa.SharedEntityManagerCreator#0
+[standard] 2017-04-21 18:51:32 INFO  com.controller.ServiceController [btpool0-0]>>> 请求的参数requestParameters : instrumentID=900102&
+[standard] 2017-04-21 18:51:32 INFO  com.service.impl.UserServiceImpl [btpool0-0]>>> service层
+[standard] 2017-04-21 18:51:32 INFO  com.dao.impl.OperateLogDaoImpl [btpool0-0]>>> OperateLogDaoImpl测试
+[standard] 2017-04-21 18:51:32 INFO  com.dao.impl.OperateLogDaoImpl [btpool0-0]>>> 保存
+[standard] 2017-04-21 18:51:32 INFO  com.dao.impl.OperateLogDaoImpl [btpool0-0]>>> OperateLogTest [id=1, jobName=1, jobGroup=2, status=1, operateDate=2, operateTime=1, fileName=2, filePath=1, totalCount=2, realCount=1, remark=2]
+[standard] 2017-04-21 18:51:32 INFO  com.dao.impl.OperateLogDaoImpl [btpool0-0]>>> OperateLogTest [id=2, jobName=1, jobGroup=2, status=1, operateDate=2, operateTime=1, fileName=2, filePath=1, totalCount=2, realCount=1, remark=2]
