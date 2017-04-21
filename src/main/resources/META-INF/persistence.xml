@@ -11,14 +11,14 @@
 	<!-- 	<class>com.entity.OperateLogTest</class> -->
 		<properties>
 			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
-			<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/sso" />
-			<property name="hibernate.connection.username" value="sso" />
-			<property name="hibernate.connection.password" value="sso" />
+			<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/qdam" />
+			<property name="hibernate.connection.username" value="qdam" />
+			<property name="hibernate.connection.password" value="qdam" />
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
 			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.format_sql" value="true" />
 			<!-- 自动创表 -->
-			 <property name="hibernate.hbm2ddl.auto" value="create" />
+			 <property name="hibernate.hbm2ddl.auto" value="update" />
 		</properties>
 	</persistence-unit>
 

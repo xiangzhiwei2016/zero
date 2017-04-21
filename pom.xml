@@ -2,10 +2,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.quantdo</groupId>
-	<artifactId>jettytest</artifactId>
+	<artifactId>framework_1.0</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>jettytest Maven Webapp</name>
+	<name>framework_1.0 Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
 		<dependency>
@@ -114,7 +114,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>jettytest</finalName>
+		<finalName>framework_1.0</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.mortbay.jetty</groupId>

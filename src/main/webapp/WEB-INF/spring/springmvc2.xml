@@ -18,8 +18,7 @@
      http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
      http://www.springframework.org/schema/context
      http://www.springframework.org/schema/context/spring-context-3.0.xsd
-     	http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
-     ">
+     http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
      <!-- spring扫描包下的所有类，让spring注解生效 -->
      <context:component-scan base-package="com"/>
      
