@@ -32,7 +32,8 @@ public class OperateLogDaoImpl implements OperateLogDao {
 
 		logger.info("±£´æ");
 		OperateLogTest o = new OperateLogTest("1", "2", "1", "2", "1", "2", "1", "2", "1", "2");
-		OperateLogTest o2 = operateLogTestRepository.save(o);
+		// ±£´æ
+		operateLogTestRepository.save(o);
 		Query query = entityManager.createQuery("select t from OperateLogTest t ", OperateLogTest.class);
 		List result = query.getResultList();
 		if (result != null) {
