@@ -1,0 +1,15 @@
+com\entity\OperateLogTest.class
+com\service\impl\FrameworkJsonServiceImpl.class
+com\service\impl\OperateServiceImpl.class
+com\service\FrameworkJsonService.class
+com\anotation\EntityClass.class
+com\anotation\Resources.class
+com\dao\OperateLogDao.class
+com\controller\ServiceController.class
+com\service\OperateService.class
+com\dao\UserDao.class
+com\repository\OperateLogTestRepository.class
+com\entity\ResponseResult.class
+com\service\impl\UserServiceImpl.class
+com\dao\impl\OperateLogDaoImpl.class
+com\service\UserService.class

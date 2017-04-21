@@ -1,0 +1,92 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>/WEB-INF/spring/springmvc2.xml</param-value>
+  </context-param>
+  <!-- 设置只有https才传递cookies -->
+  <!-- 
+  <session-config>
+	 <cookie-config>
+	  <secure>true</secure>
+	 </cookie-config>
+  </session-config>
+   -->
+<!-- 发布到Tomcat下需要打开注释内容，使tomcat支持put\delete-->  
+  <!--  
+    <filter>  
+       <filter-name>springUtf8Encoding</filter-name>  
+       <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>  
+       <init-param>  
+           <param-name>encoding</param-name>  
+           <param-value>UTF-8</param-value>  
+       </init-param>  
+       <init-param>  
+           <param-name>forceEncoding</param-name>  
+           <param-value>true</param-value>  
+       </init-param>   
+    </filter>  
+   <filter-mapping>  
+       <filter-name>springUtf8Encoding</filter-name>  
+       <url-pattern>/*</url-pattern>  
+   </filter-mapping>       
+  <filter>
+    <filter-name>HiddenHttpMethodFilter</filter-name>
+    <filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>HiddenHttpMethodFilter</filter-name>
+    <servlet-name>appServlet</servlet-name>
+  </filter-mapping>
+  -->
+  
+  <!--  jetty 打开gzip压缩支持-->  
+  <!-- 
+  <filter>
+        <filter-name>GzipFilter</filter-name>
+        <filter-class>org.eclipse.jetty.servlets.GzipFilter</filter-class>
+        <init-param>
+            <param-name>methods</param-name>
+            <param-value>GET,POST</param-value>
+        </init-param>
+        <init-param>
+            <param-name>minGzipSize</param-name>
+            <param-value>1024</param-value>
+        </init-param>
+        <init-param>
+            <param-name>mimeTypes</param-name>
+            <param-value>text/html,text/xml,text/plain,text/css,text/javascript,text/json,application/x-javascript,application/javascript,application/json,application/xml,application/xml+xhtml,image/svg+xml</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>GzipFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>  -->
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  <servlet>
+    <servlet-name>appServlet</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+     <init-param>
+      <param-name>contextClass</param-name>
+      <param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext</param-value>
+    </init-param>
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>/WEB-INF/spring/springmvc2.xml</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>appServlet</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+  	<welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
