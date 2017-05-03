@@ -3,7 +3,7 @@
 	<!-- 控制台输出日志 -->
 	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
 		<encoder>
-			<pattern>[standard] %d{yyyy-MM-dd HH:mm:ss} %-5level  %logger{36} [%thread]>>> %msg%n</pattern>
+			<pattern>[framework_1.0] %d{yyyy-MM-dd HH:mm:ss} %-5level  %logger{36} [%thread]>>> %msg%n</pattern>
 		</encoder>
 	</appender>
 	<!-- 按照固定窗口模式生成日志文件，当文件大于20MB时，生成新的日志文件。窗口大小是1到3，当保存了3个归档文件后，将覆盖最早的日志 -->
@@ -22,7 +22,7 @@
 			<maxFileSize>20MB</maxFileSize>
 		</triggeringPolicy>
 		<encoder>
-			<pattern>[standard] %d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} [%thread]>>> %msg%n
+			<pattern>[framework_1.0] %d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} [%thread]>>> %msg%n
 			</pattern>
 		</encoder>
 	</appender>	

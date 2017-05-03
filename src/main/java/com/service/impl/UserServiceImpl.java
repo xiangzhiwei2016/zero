@@ -1,10 +1,13 @@
 package com.service.impl;
 
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.List;
 
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.inject.Singleton;
+import javax.sql.DataSource;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,6 +20,7 @@ import com.dao.OperateLogDao;
 import com.entity.OperateLogTest;
 import com.service.OperateService;
 import com.service.UserService;
+import com.sso.dao.FrameworkSSOService;
 
 @Named("userService")
 //@Component // 可有可无
@@ -33,6 +37,12 @@ public class UserServiceImpl implements UserService {
 	
 	@Inject
 	ConfigureProperties configureProperties;
+	
+	@Inject
+	FrameworkSSOService frameworkSSOService;
+	
+	@Inject
+	DataSource datasource;
 
 	@Scheduled(cron="0/5 * *  * * ? ")   //每5秒执行一次  
 	public List<OperateLogTest> test() {
@@ -51,7 +61,15 @@ public class UserServiceImpl implements UserService {
 			logger.info(bn);
 
 		}
+		try {
+			Connection con = datasource.getConnection();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 //		operateService.test(ars);
+		frameworkSSOService.testsso();
 		return null;
 	}
 

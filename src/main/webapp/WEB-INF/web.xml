@@ -6,7 +6,7 @@
   <display-name>Archetype Created Web Application</display-name>
   <context-param>
     <param-name>contextConfigLocation</param-name>
-    <param-value>/WEB-INF/spring/springmvc2.xml</param-value>
+    <param-value>/WEB-INF/spring/springmvc.xml</param-value>
   </context-param>
   <!-- 设置只有https才传递cookies -->
   <!-- 
@@ -78,7 +78,7 @@
     </init-param>
     <init-param>
       <param-name>contextConfigLocation</param-name>
-      <param-value>/WEB-INF/spring/springmvc2.xml</param-value>
+      <param-value>/WEB-INF/spring/springmvc.xml</param-value>
     </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>
