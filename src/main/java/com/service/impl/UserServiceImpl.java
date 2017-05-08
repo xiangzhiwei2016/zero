@@ -21,6 +21,7 @@ import com.entity.OperateLogTest;
 import com.service.OperateService;
 import com.service.UserService;
 import com.sso.dao.FrameworkSSOService;
+import com.xzw.zero.mapper.UserMapper;
 
 @Named("userService")
 //@Component // 可有可无
@@ -41,8 +42,9 @@ public class UserServiceImpl implements UserService {
 	@Inject
 	FrameworkSSOService frameworkSSOService;
 	
-	@Inject
-	DataSource datasource;
+//	@Inject
+//	UserMapper userMapper;
+
 
 	@Scheduled(cron="0/5 * *  * * ? ")   //每5秒执行一次  
 	public List<OperateLogTest> test() {
@@ -61,15 +63,13 @@ public class UserServiceImpl implements UserService {
 			logger.info(bn);
 
 		}
-		try {
-			Connection con = datasource.getConnection();
-			
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
 //		operateService.test(ars);
-		frameworkSSOService.testsso();
+//		frameworkSSOService.testsso();
+//		List<OperateLogTest> olist = userMapper.findByMyBatis();
+//		for(OperateLogTest o : olist){
+//			logger.info(o.toString());
+//		}
 		return null;
 	}
 

@@ -82,6 +82,7 @@ public class JpaConfig {
 		factory.setJpaVendorAdapter(vendorAdapter);
 		factory.setPackagesToScan(new String[] { SystemConfigProperties.getProperty("basebackage.scan", "com") });
 		factory.setDataSource(this.dataSource);
+		logger.info("japConfig:datasource:"+dataSource);
 		return factory;
 	}
 

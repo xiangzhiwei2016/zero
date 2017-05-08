@@ -41,6 +41,7 @@ public class DataSourceConfig {
 
 		logger.info("Datasource: " + name + "," + ds.getJdbcUrl());
 		ds.getConnection().close();
+		logger.info("DataSourceConfig:"+ds.toString());
 		return ds;
 	}
 

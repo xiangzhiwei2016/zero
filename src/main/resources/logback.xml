@@ -10,7 +10,7 @@
 	<appender name="SizeFILE"
 		class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<!-- 生成日志文件 -->
-		<!-- <file>logs/log.log</file>  -->
+		 <file>logs/log.log</file> 
 
 		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
 			<fileNamePattern>logs/log.%i.log</fileNamePattern>
