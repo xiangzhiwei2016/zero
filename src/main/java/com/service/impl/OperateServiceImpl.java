@@ -13,8 +13,12 @@ import com.service.OperateService;
 public class OperateServiceImpl implements OperateService{
 	@Inject
 	OperateLogDao operateDao;
+			
 	public List<OperateLogTest> test(String ars) {
 		return operateDao.test();
+	}
+	public void save(OperateLogTest test) {
+		operateDao.save(test);
 	}
 
 }

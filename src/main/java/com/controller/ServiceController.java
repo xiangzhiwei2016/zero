@@ -21,18 +21,20 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.entity.ResponseResult;
 import com.service.FrameworkJsonService;
+import com.util.ServiceUtils;
 
 @Controller
 public class ServiceController {
 	@Inject
 	private ApplicationContext context;
+	
 	@Inject
 	@Lazy
 	FrameworkJsonService frameworkJsonService;
 
 	private static final Log logger = LogFactory.getLog(ServiceController.class);
 
-	@RequestMapping(value = { "/service/{serviceName}/{funcName}" }, method = { RequestMethod.POST }, produces = {
+	@RequestMapping(value = { "/service/{serviceName}/{funcName}" }, method = {}, produces = {
 			"text/plain;charset=UTF-8" })
 	@ResponseBody
 	public String doService(HttpServletRequest request, HttpServletResponse response, @PathVariable String serviceName,
@@ -41,21 +43,21 @@ public class ServiceController {
 		ResponseResult result = new ResponseResult();
 
 		String[] beanNames = context.getBeanDefinitionNames();
-
-		logger.info("所有beanNames个数：" + beanNames.length);
-
-		for (String bn : beanNames) {
-
-			logger.info(bn);
-
-		}
+//
+//		logger.info("鎵�鏈塨eanNames:" + beanNames.length);
+//
+//		for (String bn : beanNames) {
+//
+//			logger.info(bn);
+//
+//		}
 		boolean flag = this.context.containsBean(serviceName);
 		if (!flag) {
-			logger.error("请求无对应服务 " + serviceName + "." + funcName);
+			logger.error("璇ユ柟娉曚笉瀛樺湪" + serviceName + "." + funcName);
 			return null;
 		}
 		Object bean = context.getBean(serviceName);
-		Map<String, String> params = new HashMap();
+		Map<String, String> params = new HashMap<String, String>();
 		if ((request.getParameterNames() != null) && (request.getParameterNames().hasMoreElements())) {
 			Enumeration<String> enumList = request.getParameterNames();
 			String key = null;
@@ -70,18 +72,10 @@ public class ServiceController {
 		for (String key : params.keySet()) {
 			sb.append(key).append("=").append((String) params.get(key)).append("&");
 		}
-		logger.info(new StringBuilder().append("请求的参数requestParameters : ").append(sb.toString()).toString());
-		// 通过反射调用方法
-		Class<?> beanService = bean.getClass();
-		Method method = null;
-		Object data = null;
-		try {
-			method = beanService.getMethod("test", String.class);
-			data = method.invoke(bean, "cc");
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		logger.info(new StringBuilder().append("璇锋眰鍙傛暟requestParameters : ").append(sb.toString()).toString());
+		// 璋冪敤鏂规硶
+		Object data = ServiceUtils.callService(bean, funcName, params);
+		
 		result.setData(data == null ? null : frameworkJsonService.toJson(data));
 
 		response.setHeader("error_code", "200");

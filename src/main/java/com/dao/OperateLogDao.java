@@ -6,4 +6,6 @@ import com.entity.OperateLogTest;
 
 public interface OperateLogDao {
 	List<OperateLogTest> test();
+	
+	void save(OperateLogTest test);
 }

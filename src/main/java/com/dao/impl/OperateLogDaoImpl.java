@@ -28,24 +28,30 @@ public class OperateLogDaoImpl implements OperateLogDao {
 	EntityManager entityManager;
 
 	public List<OperateLogTest> test() {
-		logger.info("OperateLogDaoImpl²âÊÔ");
+		logger.info("OperateLogDaoImplï¿½ï¿½ï¿½ï¿½");
 
-		logger.info("±£´æ");
-		OperateLogTest o = new OperateLogTest("1", "2", "1", "2", "1", "2", "1", "2", "1", "2");
-		// ±£´æ
-		operateLogTestRepository.save(o);
-		Query query = entityManager.createQuery("select t from OperateLogTest t ", OperateLogTest.class);
-		List result = query.getResultList();
-		if (result != null) {
-			Iterator iterator = result.iterator();
-			while (iterator.hasNext()) {
-				OperateLogTest test = (OperateLogTest) iterator.next();
-				logger.info(test.toString());
-			}
-		}
+//		logger.info("ï¿½ï¿½ï¿½ï¿½");
+//		OperateLogTest o = new OperateLogTest("1", "2", "1", "2", "1", "2", "1", "2", "1", "2");
+//		// ï¿½ï¿½ï¿½ï¿½
+//		operateLogTestRepository.save(o);
+//		Query query = entityManager.createQuery("select t from OperateLogTest t ", OperateLogTest.class);
+//		List result = query.getResultList();
+//		if (result != null) {
+//			Iterator iterator = result.iterator();
+//			while (iterator.hasNext()) {
+//				OperateLogTest test = (OperateLogTest) iterator.next();
+//				logger.info(test.toString());
+//			}
+//		}
 		Iterator<OperateLogTest> list = operateLogTestRepository.findAll().iterator();
 		List<OperateLogTest> ls = IteratorUtils.toArrayList(list, 0);
+		logger.info("ç»“æœï¼š"+ls.toString());
 		return ls;
+	}
+
+	public void save(OperateLogTest test) {
+		test = operateLogTestRepository.save(test);
+		logger.info("ä¿å­˜æˆåŠŸï¼š"+test.toString());
 	}
 
 }

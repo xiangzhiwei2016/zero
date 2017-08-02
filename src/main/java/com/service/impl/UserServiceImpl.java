@@ -22,9 +22,10 @@ import com.service.OperateService;
 import com.service.UserService;
 import com.sso.dao.FrameworkSSOService;
 import com.xzw.zero.mapper.UserMapper;
+import com.zero.sso.service.SsoService;
 
 @Named("userService")
-//@Component // ¿ÉÓÐ¿ÉÎÞ
+//@Component // ï¿½ï¿½ï¿½Ð¿ï¿½ï¿½ï¿½
 public class UserServiceImpl implements UserService {
 	private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
 	@Inject
@@ -42,13 +43,16 @@ public class UserServiceImpl implements UserService {
 	@Inject
 	FrameworkSSOService frameworkSSOService;
 	
+	@Inject
+	SsoService ssoService;
+	
 //	@Inject
 //	UserMapper userMapper;
 
 
-	@Scheduled(cron="0/5 * *  * * ? ")   //Ã¿5ÃëÖ´ÐÐÒ»´Î  
+//	@Scheduled(cron="0/5 * *  * * ? ")   //Ã¿5ï¿½ï¿½Ö´ï¿½ï¿½Ò»ï¿½ï¿½  
 	public List<OperateLogTest> test() {
-		logger.info("service²ã");
+		logger.info("serviceï¿½ï¿½");
 		String ars = "s";
 		String username = configureProperties.getProperty("username");
 		
@@ -56,7 +60,7 @@ public class UserServiceImpl implements UserService {
 		logger.info("username:"+username+",password:"+password);
 		String[] beanNames = context.getBeanDefinitionNames();
 
-		logger.info("ËùÓÐbeanNames¸öÊý£º" + beanNames.length);
+		logger.info("ï¿½ï¿½ï¿½ï¿½beanNamesï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" + beanNames.length);
 
 		for (String bn : beanNames) {
 
@@ -64,7 +68,7 @@ public class UserServiceImpl implements UserService {
 
 		}
 
-//		operateService.test(ars);
+		operateService.test(ars);
 //		frameworkSSOService.testsso();
 //		List<OperateLogTest> olist = userMapper.findByMyBatis();
 //		for(OperateLogTest o : olist){
@@ -76,5 +80,11 @@ public class UserServiceImpl implements UserService {
 	public List<OperateLogTest> test2(String ars) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	
+//	@Scheduled(cron="0/5 * *  * * ? ")   //Ã¿5ï¿½ï¿½Ö´ï¿½ï¿½Ò»ï¿½ï¿½  
+	public void testDataSource(){
+		logger.info("æµ‹è¯•,...................");
+		ssoService.test("hello");
 	}
 }

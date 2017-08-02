@@ -6,4 +6,6 @@ import com.entity.OperateLogTest;
 
 public interface OperateService {
 	public List<OperateLogTest> test(String ars);
+	
+	public void save(OperateLogTest test);
 }

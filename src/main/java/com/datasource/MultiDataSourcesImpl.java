@@ -10,7 +10,7 @@ import javax.sql.DataSource;
 @Named
 @Singleton
 public class MultiDataSourcesImpl implements MultiDataSources {
-	private Map<Object, Object> dataSourceMap = new HashMap();
+	private Map<Object, Object> dataSourceMap = new HashMap<Object, Object>();
 
 	public DataSource getDataSource(String datasourceName) {
 		return (DataSource) this.dataSourceMap.get(datasourceName);

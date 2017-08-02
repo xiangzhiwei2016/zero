@@ -3,7 +3,7 @@ package com.datasource;
 import com.util.MutiDataSourceHelper;
 
 public class DBContextHolder {
-	private static final ThreadLocal<String> contextHolder = new ThreadLocal();
+	private static final ThreadLocal<String> contextHolder = new ThreadLocal<String>();
 	private static boolean isMultiDatasouce = true;
 
 	public static String getDBType() {
