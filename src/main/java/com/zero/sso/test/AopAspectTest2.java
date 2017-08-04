@@ -12,15 +12,15 @@ import org.springframework.core.annotation.Order;
 
 @Aspect
 @Named
-@Order(20)
-public class AopAspectTest {
-	private static final Logger logger = LoggerFactory.getLogger(AopAspectTest.class);
+@Order(11)
+public class AopAspectTest2 {
+	private static final Logger logger = LoggerFactory.getLogger(AopAspectTest2.class);
 	@Pointcut("execution(public * com..service..*.*(..))")
 	public void serviceExecution() {
 	}
 
 	@Before("serviceExecution()")
 	public void setBefore() throws Throwable {
-		logger.info("AopAspectTest,before,......................");
+		logger.info("AopAspectTest2,before,......................");
 	}
 }

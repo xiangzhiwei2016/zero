@@ -1,4 +1,4 @@
-package com.jpaconfig;
+package com.core.config;
 
 
 
@@ -92,4 +92,6 @@ public class JpaConfig {
 		txManager.setEntityManagerFactory(this.localContainerEntityManagerFactoryBean.getObject());
 		return txManager;
 	}
+	
+	
 }

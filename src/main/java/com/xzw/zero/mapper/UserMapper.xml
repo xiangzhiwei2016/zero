@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.mapper.UserMapper">
+<mapper namespace="com.xzw.zero.mapper.UserMapper">
 
     <!-- 资金账号成交查询 -->
 	<select id="findByMyBatis" parameterType="map" resultType="com.entity.OperateLogTest">

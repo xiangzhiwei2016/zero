@@ -12,7 +12,7 @@
 			/> -->
 	</typeAliases>
     <plugins>
-       <plugin interceptor="com.jpaconfig.PageInterceptor">           
+       <plugin interceptor="com.core.config.PageInterceptor">           
        </plugin>
     </plugins>			
 </configuration>

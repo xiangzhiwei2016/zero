@@ -1,4 +1,4 @@
-package com.jpaconfig;
+package com.core.config;
 
 import com.datasource.DynamicDataSource;
 import com.datasource.MultiDataSources;
@@ -11,6 +11,7 @@ import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 import javax.inject.Inject;
+import javax.inject.Named;
 import javax.inject.Singleton;
 import javax.sql.DataSource;
 import org.apache.commons.logging.Log;

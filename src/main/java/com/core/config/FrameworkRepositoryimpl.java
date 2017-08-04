@@ -1,4 +1,4 @@
-package com.jpaconfig;
+package com.core.config;
 
 import java.io.Serializable;
 import java.lang.reflect.Field;

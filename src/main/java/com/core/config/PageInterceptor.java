@@ -1,4 +1,4 @@
-package com.jpaconfig;
+package com.core.config;
 
 
 import com.datasource.DBContextHolder;
@@ -113,8 +113,8 @@ public class PageInterceptor implements Interceptor {
 				page.setTotalRecord((long) e);
 			}
 		} catch (SQLException arg18) {
-			logger.error("mybatis·ÖÒ³À¹½ØÆ÷²éÑ¯×Ü¼ÇÂ¼Êý±¨´í£º" + arg18.getMessage(), arg18);
-			throw new RuntimeException("mybatis·ÖÒ³À¹½ØÆ÷²éÑ¯×Ü¼ÇÂ¼Êý±¨´í£º" + arg18.getMessage());
+			logger.error("mybatisï¿½ï¿½Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¯ï¿½Ü¼ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" + arg18.getMessage(), arg18);
+			throw new RuntimeException("mybatisï¿½ï¿½Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¯ï¿½Ü¼ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" + arg18.getMessage());
 		} finally {
 			try {
 				if (rs != null) {

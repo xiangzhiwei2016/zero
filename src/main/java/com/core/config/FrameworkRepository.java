@@ -1,4 +1,4 @@
-package com.jpaconfig;
+package com.core.config;
 
 import java.io.Serializable;
 import org.springframework.data.jpa.repository.JpaRepository;
