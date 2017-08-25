@@ -263,7 +263,7 @@ public class DateUtils {
         return cal.getTime();  
     }  
   
-    private static Date weekDay(int week) {  
+    public static Date weekDay(int week) {  
         Calendar cal = calendar();  
         cal.set(Calendar.DAY_OF_WEEK, week);  
         return cal.getTime();  

@@ -39,4 +39,12 @@
 	<!-- 激活自动代理功能 -->
  	<aop:aspectj-autoproxy/> 
  	<tx:annotation-driven transaction-manager="transactionManager" />
+ 	
+ 	<!-- 拦截器 -->
+ 	 <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <bean class="com.interceptor.SessionInterceptor"></bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
 </beans>

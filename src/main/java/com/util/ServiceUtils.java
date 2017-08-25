@@ -7,12 +7,14 @@ import java.lang.reflect.Modifier;
 import java.lang.reflect.Parameter;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
+import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-
+import org.apache.shiro.session.Session;
+import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.aop.support.AopUtils;
@@ -22,6 +24,7 @@ import org.springframework.core.ParameterNameDiscoverer;
 import com.google.gson.Gson;
 import com.service.FrameworkJsonService;
 import com.service.impl.MessageServiceImpl;
+import com.session.CurrentSessionStoreFactory;
 
 
 
@@ -36,6 +39,10 @@ public class ServiceUtils {
 			realMethod = getInvokeMethod(service, funcName);
 			if (null == realMethod) {
 				logger.info("there is no method called" + service+"."+funcName);
+				return null;
+			}
+			if(!hasPermission()){
+				logger.info("无权限访问");
 				return null;
 			}
 			parameters = realMethod.getParameters();
@@ -58,7 +65,7 @@ public class ServiceUtils {
 					} else {
 						obj[i] = new Gson().fromJson(value, parameters[i].getParameterizedType());
 					}
-				} else if (!isBaseType(parameters[i].getType()) && !String.class.equals(parameters[i].getType())) {
+				}else if (!BigDecimal.class.equals(parameters[i].getType()) && !isBaseType(parameters[i].getType()) && !String.class.equals(parameters[i].getType())) {
 					obj[i] = parameterMap2Object(parameters[i].getType(), params);
 				} else {
 					obj[i] = null;
@@ -273,5 +280,21 @@ public class ServiceUtils {
 		return realMethod;
 	}
 	
-	
+	/**
+	 * 权限判断
+	 * @return
+	 */
+	public static boolean hasPermission(){
+		Session session = CurrentSessionStoreFactory.getCurrentSessionStore().getCurrentSession();
+		if(null == session){
+			logger.info("未登录！");
+			return false;
+		}
+		Subject subject = new Subject.Builder().session(session).buildSubject();
+		if(!subject.isAuthenticated()){
+			logger.info("未认证！");
+			return false;
+		}
+		return true;
+	}
 }

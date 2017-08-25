@@ -6,11 +6,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javax.inject.Inject;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.apache.shiro.session.Session;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Controller;
@@ -21,7 +23,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.entity.ResponseResult;
 import com.service.FrameworkJsonService;
+import com.session.CurrentSessionStoreFactory;
 import com.util.ServiceUtils;
+import com.util.SessionCookieUtils;
 
 @Controller
 public class ServiceController {
@@ -34,7 +38,7 @@ public class ServiceController {
 
 	private static final Log logger = LogFactory.getLog(ServiceController.class);
 
-	@RequestMapping(value = { "/service/{serviceName}/{funcName}" }, method = {}, produces = {
+	@RequestMapping(value = { "/service/{serviceName}/{funcName}" }, method = { RequestMethod.POST }, produces = {
 			"text/plain;charset=UTF-8" })
 	@ResponseBody
 	public String doService(HttpServletRequest request, HttpServletResponse response, @PathVariable String serviceName,
@@ -78,6 +82,13 @@ public class ServiceController {
 		
 		result.setData(data == null ? null : frameworkJsonService.toJson(data));
 
+		Session session = CurrentSessionStoreFactory.getCurrentSessionStore().getCurrentSession();
+		if(null != session){
+			// 会话
+			session.touch();
+			// 头返回信息
+			SessionCookieUtils.setSessionCookies(request, response, session);
+		}
 		response.setHeader("error_code", "200");
 		return frameworkJsonService.toJson(result);
 	}
