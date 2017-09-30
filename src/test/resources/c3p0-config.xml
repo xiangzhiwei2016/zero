@@ -1,0 +1,24 @@
+<c3p0-config>
+	<default-config>
+		<property name="user">quantdo</property>
+		<property name="password">quantdo</property>
+		<property name="driverClass">com.mysql.jdbc.Driver</property>
+		<property name="jdbcUrl">jdbc:mysql://192.168.100.116:3306/quantdo?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=UTF-8
+		</property>
+		<property name="initialPoolSize">1</property>
+		<property name="maxIdleTime">1800</property>
+		<property name="maxPoolSize">10</property>
+		<property name="minPoolSize">1</property>
+	</default-config>
+	<named-config name="sso">
+		<property name="user">sso</property>
+		<property name="password">sso</property>
+		<property name="driverClass">com.mysql.jdbc.Driver</property>
+		<property name="jdbcUrl">jdbc:mysql://192.168.100.116:3306/sso?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=UTF-8
+		</property>
+		<property name="initialPoolSize">10</property>
+		<property name="maxIdleTime">30</property>
+		<property name="maxPoolSize">100</property>
+		<property name="minPoolSize">10</property>
+	</named-config>
+</c3p0-config> 

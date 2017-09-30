@@ -38,4 +38,6 @@
 	
 <!-- 	<beans:bean id="schedulerFactoryBean" class="org.springframework.scheduling.quartz.SchedulerFactoryBean"></beans:bean>
  -->
+ 
+ 	<beans:import resource="classpath:dubbo/dubbo_provider.xml" />
 </beans:beans>
