@@ -14,6 +14,41 @@
 			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
+		<!-- poi -->
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+		<dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>poi</artifactId>
+		    <version>3.12</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+		<dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>poi-ooxml</artifactId>
+		    <version>3.12</version>
+		</dependency>
+		<!-- dbf -->
+		<!-- https://mvnrepository.com/artifact/com.linuxense/javadbf -->
+		<dependency>
+		    <groupId>com.linuxense</groupId>
+		    <artifactId>javadbf</artifactId>
+		    <version>0.4.0</version>
+		</dependency>
+		<!-- jdom -->
+		<!-- https://mvnrepository.com/artifact/jdom/jdom -->
+		<dependency>
+    		<groupId>jdom</groupId>
+    		<artifactId>jdom</artifactId>
+    		<version>1.0</version>
+		</dependency>
+		<!-- FTP -->
+		<!-- https://mvnrepository.com/artifact/commons-net/commons-net -->
+		<dependency>
+		    <groupId>commons-net</groupId>
+		    <artifactId>commons-net</artifactId>
+		    <version>3.3</version>
+		</dependency>
+											
 		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -26,6 +61,13 @@
 			<artifactId>spring-context</artifactId>
 			<version>4.3.7.RELEASE</version>
 		</dependency>
+	<!-- https://mvnrepository.com/artifact/org.springframework/spring-aop -->
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-aop</artifactId>
+    <version>4.1.4.RELEASE</version>
+</dependency>
+
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-web -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -267,8 +309,32 @@
     <artifactId>spring-context-support</artifactId>
     <version>4.1.1.RELEASE</version>
 </dependency>
+<!-- https://mvnrepository.com/artifact/org.apache.cxf/cxf-api -->
+<dependency>
+    <groupId>org.apache.cxf</groupId>
+    <artifactId>cxf-api</artifactId>
+    <version>2.5.9</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.apache.cxf/cxf-core -->
+<dependency>
+    <groupId>org.apache.cxf</groupId>
+    <artifactId>cxf-core</artifactId>
+    <version>3.0.4</version>
+</dependency>
 
-
+ <!-- Start of CXF Dependencies -->  
+    <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-rt-frontend-simple</artifactId>
+                <version>3.0.14</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-rt-transports-http</artifactId>
+                <version>3.0.14</version>
+            </dependency>
+        <!-- End of CXF Dependencies -->  
+  
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
 		<!-- <dependency>
 		    <groupId>org.springframework</groupId>
@@ -276,7 +342,7 @@
 		    <version>4.1.1.RELEASE</version>
 		</dependency> -->
 	</dependencies>
-
+	 
 	<build>
 		<finalName>framework_1.0</finalName>
 		<plugins>
