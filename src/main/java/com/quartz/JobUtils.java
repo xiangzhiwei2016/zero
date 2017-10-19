@@ -1,4 +1,4 @@
-package quartz;
+package com.quartz;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;

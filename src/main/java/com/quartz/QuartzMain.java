@@ -1,4 +1,4 @@
-package quartz;
+package com.quartz;
 
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.webapp.WebAppContext;

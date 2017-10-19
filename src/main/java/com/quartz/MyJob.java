@@ -5,12 +5,15 @@
  * @author xiangzhiwei
  *
  */
-package quartz;
+package com.quartz;
+
+import javax.inject.Named;
 
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 
+@Named
 public class MyJob implements Job{
 
 	@Override

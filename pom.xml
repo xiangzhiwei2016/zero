@@ -7,6 +7,11 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>framework_1.0 Maven Webapp</name>
 	<url>http://maven.apache.org</url>
+	<properties>
+		<spring_version>4.3.7.RELEASE</spring_version>
+		<servlet_version>3.1.0</servlet_version>
+		<inject_version>1</inject_version>
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -17,75 +22,46 @@
 		<!-- poi -->
 		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
 		<dependency>
-		    <groupId>org.apache.poi</groupId>
-		    <artifactId>poi</artifactId>
-		    <version>3.12</version>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.12</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
 		<dependency>
-		    <groupId>org.apache.poi</groupId>
-		    <artifactId>poi-ooxml</artifactId>
-		    <version>3.12</version>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.12</version>
 		</dependency>
 		<!-- dbf -->
 		<!-- https://mvnrepository.com/artifact/com.linuxense/javadbf -->
 		<dependency>
-		    <groupId>com.linuxense</groupId>
-		    <artifactId>javadbf</artifactId>
-		    <version>0.4.0</version>
+			<groupId>com.linuxense</groupId>
+			<artifactId>javadbf</artifactId>
+			<version>0.4.0</version>
 		</dependency>
 		<!-- jdom -->
 		<!-- https://mvnrepository.com/artifact/jdom/jdom -->
 		<dependency>
-    		<groupId>jdom</groupId>
-    		<artifactId>jdom</artifactId>
-    		<version>1.0</version>
+			<groupId>jdom</groupId>
+			<artifactId>jdom</artifactId>
+			<version>1.0</version>
 		</dependency>
 		<!-- FTP -->
 		<!-- https://mvnrepository.com/artifact/commons-net/commons-net -->
 		<dependency>
-		    <groupId>commons-net</groupId>
-		    <artifactId>commons-net</artifactId>
-		    <version>3.3</version>
+			<groupId>commons-net</groupId>
+			<artifactId>commons-net</artifactId>
+			<version>3.3</version>
 		</dependency>
-											
-		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+		<!-- c3p0 -->
+		<!-- https://mvnrepository.com/artifact/com.mchange/c3p0 -->
 		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<version>3.1.0</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context</artifactId>
-			<version>4.3.7.RELEASE</version>
-		</dependency>
-	<!-- https://mvnrepository.com/artifact/org.springframework/spring-aop -->
-<dependency>
-    <groupId>org.springframework</groupId>
-    <artifactId>spring-aop</artifactId>
-    <version>4.1.4.RELEASE</version>
-</dependency>
+			<groupId>com.mchange</groupId>
+			<artifactId>c3p0</artifactId>
+			<version>0.9.5-pre5</version>
 
-		<!-- https://mvnrepository.com/artifact/org.springframework/spring-web -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-web</artifactId>
-			<version>4.3.7.RELEASE</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-webmvc</artifactId>
-			<version>4.3.7.RELEASE</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/javax.inject/javax.inject -->
-		<dependency>
-			<groupId>javax.inject</groupId>
-			<artifactId>javax.inject</artifactId>
-			<version>1</version>
-		</dependency>
+		<!-- logback -->
 		<!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-core -->
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
@@ -98,25 +74,66 @@
 			<artifactId>logback-classic</artifactId>
 			<version>1.1.3</version>
 		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/com.mchange/c3p0 -->
+		<!-- spring -->
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
 		<dependency>
-			<groupId>com.mchange</groupId>
-			<artifactId>c3p0</artifactId>
-			<version>0.9.5-pre5</version>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring_version}</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-aop -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+			<version>${spring_version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-web -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring_version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring_version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring_version}</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-context-support -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>${spring_version}</version>
+		</dependency>
+		<!-- servlet -->
+		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>${servlet_version}</version>
+		</dependency>
+
+		<!-- inject -->
+		<dependency>
+			<groupId>javax.inject</groupId>
+			<artifactId>javax.inject</artifactId>
+			<version>${inject_version}</version>
+		</dependency>
+		<!-- mysql -->
 		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.26</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.datanucleus/javax.persistence -->
-		<dependency>
-			<groupId>org.datanucleus</groupId>
-			<artifactId>javax.persistence</artifactId>
-			<version>2.1.0</version>
-		</dependency>
+		<!-- jpa,hibernate -->
 		<!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa -->
 		<dependency>
 			<groupId>org.springframework.data</groupId>
@@ -128,6 +145,13 @@
 			<artifactId>hibernate-entitymanager</artifactId>
 			<version>4.1.7.Final</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>5.0.1.Final</version>
+		</dependency>
+		<!-- sl4j,log4j -->
 		<!-- https://mvnrepository.com/artifact/org.slf4j/log4j-over-slf4j -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -140,25 +164,20 @@
 			<artifactId>log4j-core</artifactId>
 			<version>2.1</version>
 		</dependency>
+		<!-- gson -->
 		<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
 			<version>2.2.4</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-validator</artifactId>
-			<version>5.0.1.Final</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
 			<version>3.4</version>
 		</dependency>
-
+		<!-- mybatis -->
 		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
@@ -177,265 +196,226 @@
 			<artifactId>mybatis-generator-core</artifactId>
 			<version>1.3.2</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
+		<!-- aspect -->
 		<dependency>
-		    <groupId>org.aspectj</groupId>
-		    <artifactId>aspectjweaver</artifactId>
-		    <version>1.8.2</version>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>1.8.2</version>
 		</dependency>
-
+		<!-- cglib -->
 		<!-- https://mvnrepository.com/artifact/cglib/cglib-nodep -->
 		<dependency>
-		    <groupId>cglib</groupId>
-		    <artifactId>cglib-nodep</artifactId>
-		    <version>2.2</version>
+			<groupId>cglib</groupId>
+			<artifactId>cglib-nodep</artifactId>
+			<version>2.2</version>
 		</dependency>
+		<!-- httpclient -->
 		<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
 		<dependency>
-		    <groupId>org.apache.httpcomponents</groupId>
-		    <artifactId>httpclient</artifactId>
-		    <version>4.5.2</version>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.5.2</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpmime -->
 		<dependency>
-		    <groupId>org.apache.httpcomponents</groupId>
-		    <artifactId>httpmime</artifactId>
-		    <version>4.3.5</version>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpmime</artifactId>
+			<version>4.3.5</version>
 		</dependency>
+		<!-- beanutils -->
 		<!-- https://mvnrepository.com/artifact/commons-beanutils/commons-beanutils -->
-	<dependency>
-	    <groupId>commons-beanutils</groupId>
-	    <artifactId>commons-beanutils</artifactId>
-	    <version>1.9.2</version>
-	</dependency>
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+			<version>1.9.2</version>
+		</dependency>
+		<!-- zkclient -->
 		<!-- https://mvnrepository.com/artifact/com.101tec/zkclient -->
-<dependency>
-    <groupId>com.101tec</groupId>
-    <artifactId>zkclient</artifactId>
-    <version>0.7</version>
-</dependency>
-		<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-slf4j-impl -->
-<!-- <dependency>
-    <groupId>org.apache.logging.log4j</groupId>
-    <artifactId>log4j-slf4j-impl</artifactId>
-    <version>2.1</version>
-</dependency> -->
-	<!-- https://mvnrepository.com/artifact/org.apache.zookeeper/zookeeper -->
-<dependency>
-    <groupId>org.apache.zookeeper</groupId>
-    <artifactId>zookeeper</artifactId>
-    <version>3.4.6</version>
-    <type>pom</type>
-</dependency>
-		
+		<dependency>
+			<groupId>com.101tec</groupId>
+			<artifactId>zkclient</artifactId>
+			<version>0.7</version>
+			<exclusions>
+				<exclusion>
+					<groupId>*</groupId>
+					<artifactId>*</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.zookeeper/zookeeper -->
+		<dependency>
+			<groupId>org.apache.zookeeper</groupId>
+			<artifactId>zookeeper</artifactId>
+			<version>3.4.6</version>
+			<type>pom</type>
+			<exclusions>
+				<exclusion>
+					<groupId>*</groupId>
+					<artifactId>*</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot -->
-<dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot</artifactId>
-    <version>1.5.4.RELEASE</version>
-</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot</artifactId>
+			<version>1.5.4.RELEASE</version>
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-autoconfigure -->
-<dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-autoconfigure</artifactId>
-    <version>1.5.5.RELEASE</version>
-</dependency>
-<!-- https://mvnrepository.com/artifact/org.apache.shiro/shiro-core -->
-<dependency>
-    <groupId>org.apache.shiro</groupId>
-    <artifactId>shiro-core</artifactId>
-    <version>1.2.3</version>
-</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-autoconfigure</artifactId>
+			<version>1.5.5.RELEASE</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.shiro/shiro-core -->
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-core</artifactId>
+			<version>1.2.3</version>
+		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.apache.shiro/shiro-spring -->
-<dependency>
-    <groupId>org.apache.shiro</groupId>
-    <artifactId>shiro-spring</artifactId>
-    <version>1.2.3</version>
-</dependency>
-		
 		<dependency>
-   <groupId>org.eclipse.jetty.aggregate</groupId>
-   <artifactId>jetty-all-server</artifactId>
-   <version>8.2.0.v20160908</version>
-</dependency>
-
-
-      <dependency>
-         <groupId>org.eclipse.jetty</groupId>
-         <artifactId>jetty-jsp</artifactId>
-         <version>8.2.0.v20160908</version>
-      </dependency>
-		<!-- https://mvnrepository.com/artifact/org.javassist/javassist -->
-<dependency>
-    <groupId>org.javassist</groupId>
-    <artifactId>javassist</artifactId>
-    <version>3.18.0-GA</version>
-</dependency>
-<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
-<dependency>
-    <groupId>commons-io</groupId>
-    <artifactId>commons-io</artifactId>
-    <version>2.4</version>
-</dependency>
-<!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
-<dependency>
-    <groupId>commons-fileupload</groupId>
-    <artifactId>commons-fileupload</artifactId>
-    <version>1.3</version>
-</dependency>
-<!-- https://mvnrepository.com/artifact/com.alibaba/dubbo -->
-		<dependency>
-		    <groupId>com.alibaba</groupId>
-		    <artifactId>dubbo</artifactId>
-		    <version>2.5.3</version>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-spring</artifactId>
+			<version>1.2.3</version>
 		</dependency>
-<!-- https://mvnrepository.com/artifact/org.quartz-scheduler/quartz -->
-<dependency>
-    <groupId>org.quartz-scheduler</groupId>
-    <artifactId>quartz</artifactId>
-    <version>2.2.1</version>
-</dependency>
-<!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->
-<dependency>
-    <groupId>org.springframework</groupId>
-    <artifactId>spring-test</artifactId>
-    <version>4.1.1.RELEASE</version>
-    <scope>test</scope>
-</dependency>
-<!-- https://mvnrepository.com/artifact/org.springframework/spring-context-support -->
-<dependency>
-    <groupId>org.springframework</groupId>
-    <artifactId>spring-context-support</artifactId>
-    <version>4.1.1.RELEASE</version>
-</dependency>
-<!-- https://mvnrepository.com/artifact/org.apache.cxf/cxf-api -->
-<dependency>
-    <groupId>org.apache.cxf</groupId>
-    <artifactId>cxf-api</artifactId>
-    <version>2.5.9</version>
-</dependency>
-<!-- https://mvnrepository.com/artifact/org.apache.cxf/cxf-core -->
-<dependency>
-    <groupId>org.apache.cxf</groupId>
-    <artifactId>cxf-core</artifactId>
-    <version>3.0.4</version>
-</dependency>
 
- <!-- Start of CXF Dependencies -->  
-    <dependency>
-                <groupId>org.apache.cxf</groupId>
-                <artifactId>cxf-rt-frontend-simple</artifactId>
-                <version>3.0.14</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.cxf</groupId>
-                <artifactId>cxf-rt-transports-http</artifactId>
-                <version>3.0.14</version>
-            </dependency>
-        <!-- End of CXF Dependencies -->  
-  
-		<!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
-		<!-- <dependency>
-		    <groupId>org.springframework</groupId>
-		    <artifactId>spring-core</artifactId>
-		    <version>4.1.1.RELEASE</version>
-		</dependency> -->
+		<dependency>
+			<groupId>org.eclipse.jetty.aggregate</groupId>
+			<artifactId>jetty-all-server</artifactId>
+			<version>8.2.0.v20160908</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-jsp</artifactId>
+			<version>8.2.0.v20160908</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.javassist/javassist -->
+		<dependency>
+			<groupId>org.javassist</groupId>
+			<artifactId>javassist</artifactId>
+			<version>3.18.0-GA</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.3</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.alibaba/dubbo -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>dubbo</artifactId>
+			<version>2.5.3</version>
+			<exclusions>
+				<!-- 去除老版本的spring 跟quarz不兼容 -->
+				<exclusion>
+					<artifactId>spring</artifactId>
+					<groupId>org.springframework</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.quartz-scheduler/quartz -->
+		<dependency>
+			<groupId>org.quartz-scheduler</groupId>
+			<artifactId>quartz</artifactId>
+			<version>2.2.1</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.cxf/cxf-api -->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-api</artifactId>
+			<version>2.5.9</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.cxf/cxf-core -->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-core</artifactId>
+			<version>3.0.4</version>
+		</dependency>
 	</dependencies>
-	 
 	<build>
 		<finalName>framework_1.0</finalName>
 		<plugins>
-			<!-- <plugin>
-				<groupId>org.mortbay.jetty</groupId>
-				<artifactId>maven-jetty-plugin</artifactId>
-				<version>6.1.10</version>
+			<!-- <plugin> <groupId>org.mortbay.jetty</groupId> <artifactId>maven-jetty-plugin</artifactId> 
+				<version>6.1.10</version> <configuration> <scanIntervalSeconds>10</scanIntervalSeconds> 
+				<stopKey>foo</stopKey> <stopPort>9999</stopPort> </configuration> <executions> 
+				<execution> <id>start-jetty</id> <phase>pre-integration-test</phase> <goals> 
+				<goal>run</goal> </goals> <configuration> <scanIntervalSeconds>0</scanIntervalSeconds> 
+				<daemon>true</daemon> </configuration> </execution> <execution> <id>stop-jetty</id> 
+				<phase>post-integration-test</phase> <goals> <goal>stop</goal> </goals> </execution> 
+				</executions> </plugin> -->
+			<plugin>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>9.2.2.v20140723</version>
 				<configuration>
-					<scanIntervalSeconds>10</scanIntervalSeconds>
-					<stopKey>foo</stopKey>
+					<httpConnector>
+						<port>9080</port>
+					</httpConnector>
+					<webApp>
+						<contextPath>/framework_1.0</contextPath>
+					</webApp>
+					<systemProperties>
+						<systemProperty>
+							<name>DEBUG</name>
+							<value>TRUE</value>
+						</systemProperty>
+					</systemProperties>
+					<!-- <scanIntervalSeconds>10</scanIntervalSeconds> -->
+					<stopKey>greenline-hrs-admin-war</stopKey>
 					<stopPort>9999</stopPort>
+					<scanTargetPatterns>
+						<scanTargetPattern>
+							<directory>src/main/webapp/WEB-INF</directory>
+							<includes>
+								<include>**/*.properties</include>
+								<include>**/*.xml</include>
+							</includes>
+						</scanTargetPattern>
+					</scanTargetPatterns>
 				</configuration>
 				<executions>
 					<execution>
 						<id>start-jetty</id>
-						<phase>pre-integration-test</phase>
+						<phase>post-site</phase>
 						<goals>
 							<goal>run</goal>
 						</goals>
 						<configuration>
 							<scanIntervalSeconds>0</scanIntervalSeconds>
-							<daemon>true</daemon>
+							<daemon>false</daemon>
 						</configuration>
 					</execution>
 					<execution>
 						<id>stop-jetty</id>
-						<phase>post-integration-test</phase>
+						<phase>post-site</phase>
 						<goals>
 							<goal>stop</goal>
 						</goals>
 					</execution>
 				</executions>
-			</plugin> -->
+			</plugin>
 			<plugin>
-                <groupId>org.eclipse.jetty</groupId>
-                <artifactId>jetty-maven-plugin</artifactId>
-                <version>9.2.2.v20140723</version>
-                <configuration>
-                    <httpConnector>
-                        <port>9080</port>
-                    </httpConnector>
-                    <webApp>
-                        <contextPath>/framework_1.0</contextPath>
-                    </webApp>
-                    <systemProperties>
-                        <systemProperty>
-                            <name>DEBUG</name>
-                            <value>TRUE</value>
-                        </systemProperty>
-                    </systemProperties>
-                   <!--  <scanIntervalSeconds>10</scanIntervalSeconds>  -->
-                    <stopKey>greenline-hrs-admin-war</stopKey>
-                    <stopPort>9999</stopPort>
-                    <scanTargetPatterns>
-                        <scanTargetPattern>
-                            <directory>src/main/webapp/WEB-INF</directory>
-                            <includes>
-                                <include>**/*.properties</include>
-                                <include>**/*.xml</include>
-                            </includes>
-                        </scanTargetPattern>
-                    </scanTargetPatterns>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>start-jetty</id>
-                        <phase>post-site</phase>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                        <configuration>
-                            <scanIntervalSeconds>0</scanIntervalSeconds>
-                            <daemon>false</daemon>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>stop-jetty</id>
-                        <phase>post-site</phase>
-                        <goals>
-                            <goal>stop</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        	<plugin>  
-        	<!-- jdk默认1.8 -->
-           	 <groupId>org.apache.maven.plugins</groupId>  
-            	<artifactId>maven-compiler-plugin</artifactId>  
-            	<configuration>  
-               	 <source>1.8</source>  
-                	<target>1.8</target>  
-            	</configuration>  
-        	</plugin>  
+				<!-- jdk默认1.8 -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 </project>
