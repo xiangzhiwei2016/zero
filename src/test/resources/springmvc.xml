@@ -48,6 +48,6 @@
         </mvc:interceptor>
     </mvc:interceptors>
     
-    
-	<bean id="schedulerFactoryBean" class="org.springframework.scheduling.quartz.SchedulerFactoryBean"></bean>
+  <!--   
+	<bean id="schedulerFactoryBean" class="org.springframework.scheduling.quartz.SchedulerFactoryBean"></bean> -->
 </beans>
