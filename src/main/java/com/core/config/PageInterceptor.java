@@ -113,8 +113,8 @@ public class PageInterceptor implements Interceptor {
 				page.setTotalRecord((long) e);
 			}
 		} catch (SQLException arg18) {
-			logger.error("mybatis��ҳ��������ѯ�ܼ�¼������" + arg18.getMessage(), arg18);
-			throw new RuntimeException("mybatis��ҳ��������ѯ�ܼ�¼������" + arg18.getMessage());
+			logger.error( arg18.getMessage(), arg18);
+			throw new RuntimeException(arg18.getMessage());
 		} finally {
 			try {
 				if (rs != null) {

@@ -43,8 +43,7 @@ public class MybatisConfig {
 	public SqlSessionFactoryBean getSqlSessionFactoryBean() throws IOException {
 		logger.info("mybatis:3");
 		SqlSessionFactoryBean sql = new SqlSessionFactoryBean();
-		ComboPooledDataSource ds = new ComboPooledDataSource("sso");
-		sql.setDataSource(ds);
+		sql.setDataSource(dataSource);
 		PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
 		Resource[] resources = resolver.getResources("classpath*:com/**/*Mapper.xml");
 		sql.setMapperLocations(resources);

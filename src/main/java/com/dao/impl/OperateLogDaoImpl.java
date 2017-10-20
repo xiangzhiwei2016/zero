@@ -28,11 +28,8 @@ public class OperateLogDaoImpl implements OperateLogDao {
 	EntityManager entityManager;
 
 	public List<OperateLogTest> test() {
-		logger.info("OperateLogDaoImpl����");
-
-//		logger.info("����");
+//		logger.info("测试");
 //		OperateLogTest o = new OperateLogTest("1", "2", "1", "2", "1", "2", "1", "2", "1", "2");
-//		// ����
 //		operateLogTestRepository.save(o);
 //		Query query = entityManager.createQuery("select t from OperateLogTest t ", OperateLogTest.class);
 //		List result = query.getResultList();
@@ -52,6 +49,11 @@ public class OperateLogDaoImpl implements OperateLogDao {
 	public void save(OperateLogTest test) {
 		test = operateLogTestRepository.save(test);
 		logger.info("保存成功："+test.toString());
+	}
+
+	@Override
+	public void removeAll() {
+		operateLogTestRepository.deleteAll();
 	}
 
 }

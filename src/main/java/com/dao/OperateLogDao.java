@@ -8,4 +8,6 @@ public interface OperateLogDao {
 	List<OperateLogTest> test();
 	
 	void save(OperateLogTest test);
+	
+	void removeAll();
 }

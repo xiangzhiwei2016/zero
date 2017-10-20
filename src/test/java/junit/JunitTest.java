@@ -1,17 +1,14 @@
 package junit;
-
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.inject.Inject;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
@@ -19,18 +16,17 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import com.service.OperateService;
 import com.util.ApplicationContextUtils;
 
-
+/**
+ * 
+ * @author xiangzhiwei
+ *
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:springmvc.xml" })
 @WebAppConfiguration
 public class JunitTest {
 	private static final Logger logger = LoggerFactory.getLogger(JunitTest.class);
 	
-//	@Inject
-//	OperateService operateService;
-//	
-//	@Inject
-//	ApplicationContext applicationContext;
 	
 	@Test
 	public void test() throws IllegalAccessException, IllegalArgumentException, InvocationTargetException{
@@ -52,13 +48,14 @@ public class JunitTest {
 		}
 		
 		for(Method method : methodList){
-			if(method.getName().equals("test")){
+			if("test".equals(method.getName())){
 				logger.info("method:"+method.toString());
 				method.invoke(obj, "s");
 			}
 		}
 		OperateService operateService = (OperateService)ApplicationContextUtils.getBean("operateService");
 		operateService.test("hello");
+		
 	}
 		
 }
